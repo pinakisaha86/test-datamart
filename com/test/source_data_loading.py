@@ -65,6 +65,7 @@ if __name__ == '__main__':
                 .partitionBy('ins_dt') \
                 .mode('append') \
                 .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
+
         elif src == 'ADDR' :
             students = read_from_mongodb(spark, app_conf) \
                 .withColumn('ins_dt', current_date())
