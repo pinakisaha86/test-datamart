@@ -1,8 +1,5 @@
 src_list:
   - SB
-  - OL
-  - CP
-  - ADDR
 
 SB:
   mysql_conf:
