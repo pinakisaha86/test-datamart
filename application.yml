@@ -1,6 +1,10 @@
 src_list:
   - SB
 
+tgt_list:
+  - REGIS_DIM
+
+
 SB:
   mysql_conf:
     database: testdb
