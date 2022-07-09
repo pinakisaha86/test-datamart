@@ -58,7 +58,7 @@ if __name__ == '__main__':
         elif src == 'OL':
 
 
-            ol_txn_df = read_from_sftp(spark, app_secret, app_conf, os, current_dir)\
+            ol_txn_df = read_from_sftp(spark, app_secret, src_conf, os, current_dir)\
                 .withColumn('ins_dt', current_date())
 
             ol_txn_df.show(5, False)
