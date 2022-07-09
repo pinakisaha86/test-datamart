@@ -53,7 +53,7 @@ if __name__ == '__main__':
             txn_df.write \
                 .partitionBy('ins_dt') \
                 .mode('append') \
-                .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src1)
+                .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
 
         elif src == 'OL':
             ol_txn_df = read_from_sftp(spark, app_secret, app_conf, os, current_dir)\
