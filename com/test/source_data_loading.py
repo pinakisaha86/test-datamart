@@ -8,7 +8,7 @@ from com.utility.utils import *
 if __name__ == '__main__':
 
     os.environ["PYSPARK_SUBMIT_ARGS"] = (
-        '--packages "mysql:mysql-connector-java:8.0.15" pyspark-shell'
+        '--packages "mysql:mysql-connector-java:8.0.15" ,"org.mongodb.spark:mongo-spark-connector_2.11:2.4.1" pyspark-shell'
     )
 # Create the SparkSession
     spark = SparkSession \
@@ -81,5 +81,7 @@ if __name__ == '__main__':
 
 
 # spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1,mysql:mysql-connector-java:8.0.15" com/test/source_data_loading.py
+
+# spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1,mysql:mysql-connector-java:8.0.15,org.mongodb.spark:mongo-spark-connector_2.11:2.4.1" com/test/source_data_loading.py
 
 
