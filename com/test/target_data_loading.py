@@ -34,7 +34,7 @@ if __name__ == '__main__':
     for tgt in tgt_list:
         tgt_conf = app_conf[tgt]
         if tgt == 'REGIS_DIM':
-            regis_dim_df = spark.read.parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + tgt)
+            regis_dim_df = spark.read.parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + tgt_conf['source_data'])
 
             regis_dim_df.createOrReplaceTempView("CP")
             spark.sql(app_conf[tgt_list]).show(5, False)
