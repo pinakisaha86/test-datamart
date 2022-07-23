@@ -1,5 +1,5 @@
 src_list:
-  - ADDR
+  - SB
 
 tgt_list:
   - REGIS_DIM
