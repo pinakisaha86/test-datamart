@@ -69,7 +69,7 @@ if __name__ == '__main__':
                 .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
 
         elif src == 'ADDR' :
-            students = read_from_mongodb(spark, src_conf) \
+            students = read_from_mongodb(spark, src_conf ) \
                 .withColumn('ins_dt', current_date())
 
             students.show()
