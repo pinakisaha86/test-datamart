@@ -80,7 +80,7 @@ if __name__ == '__main__':
                 .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
 
         elif src == 'CP' :
-            cp_df = spark.read.csv('s3a://' + s3_bucket + '/' + staging_loc + '/' + src) \
+            cp_df = spark.read.option('header', 'true').option('delimiter', '|').csv('s3a://' + s3_bucket + '/KC_Extract_1_20171009.csv') \
                 .withColumn('ins_dt', current_date())
 
             cp_df.show()

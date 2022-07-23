@@ -79,6 +79,8 @@ ADDR:
     database: school
     collection: students
 
+CP:
+
 
 s3_conf:
   s3_bucket: saha-bigdata
