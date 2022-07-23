@@ -40,6 +40,8 @@ if __name__ == '__main__':
             result = spark.sql(tgt_conf['loadingQuery'])
 
            # result.repartition(1).write.option("header", "true").mode("overwrite").parquet("")
+            jdbc_url = ut.get_redshift_jdbc_url(app_secret)
+            print(jdbc_url)
 
             result.coalesce(1).write \
                 .format("io.github.spark_redshift_community.spark.redshift") \
