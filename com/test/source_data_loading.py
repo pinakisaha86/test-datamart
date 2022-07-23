@@ -79,6 +79,17 @@ if __name__ == '__main__':
                 .mode('append')\
                 .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
 
+        elif src == 'CP' :
+            cp_df = spark.read.csv('s3a://' + s3_bucket + '/' + staging_loc + '/' + src) \
+                .withColumn('ins_dt', current_date())
+
+            cp_df.show()
+
+            cp_df.write\
+                .partitionBy('ins_dt')\
+                .mode('append')\
+                .parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + src)
+
 
 # spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1,mysql:mysql-connector-java:8.0.15" com/test/source_data_loading.py
 
