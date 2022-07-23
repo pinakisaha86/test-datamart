@@ -2,7 +2,7 @@ src_list:
   - CP
 
 tgt_list:
-  - REGIS_DIM
+  - CHILD_DIM
 
 REGIS_DIM:
   tableName: csvdb1.REGIS_DIM
