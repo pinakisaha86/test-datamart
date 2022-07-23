@@ -37,6 +37,6 @@ if __name__ == '__main__':
             regis_dim_df = spark.read.parquet('s3a://' + s3_bucket + '/' + staging_loc + '/' + tgt_conf['source_data'])
 
             regis_dim_df.createOrReplaceTempView("CP")
-            spark.sql(app_conf[tgt_list]).show(5, False)
+            spark.sql(tgt_conf['loadingQuery']).show(5, False)
 
 # spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1,mysql:mysql-connector-java:8.0.15" com/test/target_data_loading.py
